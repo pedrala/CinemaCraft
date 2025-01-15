@@ -151,58 +151,6 @@ action updateUserById {
 }
 //#endregion
 
-
-// 추가된 내용 시작
-// Enum 타입 정의
-enum LocationType {
-  INTERIOR
-  EXTERIOR
-}
-
-
-entity Scenario {
-  title: String
-  description: String?
-  filePath: String       // 업로드된 파일의 경로
-  uploadedAt: DateTime
-  breakdown: Breakdown?  // Breakdown과의 관계
-}
-
-entity Breakdown {
-  scenes: [Scene]        // Scene과의 일대다 관계
-}
-
-entity Scene {
-  breakdown: Breakdown   // Breakdown과의 관계
-  number: Int
-  location: String
-  time: String
-  interiorExterior: LocationType
-  description: String?
-}
-
-page UploadScenario {
-  component: import UploadScenario from "@client/pages/UploadScenario"
-}
-
-
-page ScenarioDetail {
-  component: import ScenarioDetail from "@client/pages/ScenarioDetail"
-  authRequired: false
-}
-
-route "/upload-scenario" -> page UploadScenario
-route "/scenarios/:scenarioId" -> page ScenarioDetail
-
-
-server {
-  setupFn: import setupServer from "@server/setupServer.js"
-}
-
-// 추가된 내용 끝
-
-
-
 //#region Demo AI App
 route DemoAppRoute { path: "/demo-app", to: DemoAppPage }
 page DemoAppPage {
