@@ -7,3 +7,6 @@
 3. `blog` - CinemaCraft blog / docs, built with [Astro](https://docs.astro.build) based on [Starlight](https://starlight.astro.build/) template.
 
 For more details, check READMEs of each respective directory!
+
+### Reference
+https://github.com/wasp-lang/open-saas
