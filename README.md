@@ -1,4 +1,6 @@
-# CinemaCraft
+## Cinema Craft - Film production SaaS
+
+### Folder Structure
 
 1. `app` - CinemaCraft, built with [Wasp](https://wasp-lang.dev).
 2. `e2e-tests` - [Playwright](https://playwright.dev/) tests for CinemaCraft Wasp web app.
